@@ -6,6 +6,7 @@ authors = ["Jelle Vegter <jelle.vegter@nederlandseloterij.nl>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+dbt-databricks = "^1.0.3"
 
 [tool.poetry.dev-dependencies]
 
