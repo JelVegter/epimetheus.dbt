@@ -1,24 +1,38 @@
 version: 2
 
 models:
-  - name: xml_files_silver
+  - name: fact_check_dbt
     description: ""
     columns:
-      # - name: _c0
-      #   description: "The primary key for this table"
-      #   tests:
-      #     - unique
-      #     - not_null
-      - name: xml_name
+      - name: daily_check
         description: "The primary key for this table"
+        tests:
+          - not_null
+      - name: caerus_id
+        description: ""
         tests:
           - unique
           - not_null
-      # - name: extraction_time
-      #   description: "The primary key for this table"
-      #   tests:
-      #     - unique
-      #     - not_null
+      - name: record_id
+        description: ""
+        tests:
+          - unique
+          - not_null
+      - name: _ts
+        description: ""
+        tests:
+          - not_null
+      - name: _date
+        description: ""
+        tests:
+          - not_null
+  - name: dim_check
+    description: ""
+    columns:
+      - name: daily_check
+        description: "The primary key for this table"
+        tests:
+          - not_null
       # - name: transaction_time
       #   description: "The primary key for this table"
       #   tests:
