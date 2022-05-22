@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: fact_check_dbt
+  - name: fact_check
     description: ""
     columns:
       - name: daily_check
