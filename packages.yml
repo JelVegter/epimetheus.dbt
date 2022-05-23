@@ -1,5 +1,4 @@
 packages:
-  - package: dbt-labs/dbt-utils
-    version: 0.8.5
+  - git: "https://github.com/dbt-labs/dbt-utils.git"
   - package: dbt-msft/tsql_utils
     version: 0.8.1
