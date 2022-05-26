@@ -8,6 +8,15 @@ config-version: 2
 # This setting configures which "profile" dbt uses for this project.
 profile: "epimetheus_mssql"
 
+dispatch:
+  - macro_namespace: dbt_utils
+    search_order: ['tsql_utils', 'dbt_utils']
+  - macro_namespace: dbt_date
+    search_order: ['tsql_utils', 'dbt_date']
+  
+vars:
+  'dbt_date:time_zone': 'UTC'
+  
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
