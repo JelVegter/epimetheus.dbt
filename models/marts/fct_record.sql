@@ -2,6 +2,7 @@
     materialized = 'table'
 ) }}
 --
+
 WITH source_data AS (
 
     SELECT
@@ -16,4 +17,7 @@ SELECT
     {{ dbt_date.today() }} as _write_date
 FROM
     source_data
+WHERE
+{{ dbt_utils.datediff("write_dt", "getdate()", 'day') }} < 15
+
 
