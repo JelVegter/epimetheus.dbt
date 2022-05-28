@@ -27,7 +27,7 @@ models:
         description: ""
         tests:
           - not_null
-      - name: {{ dbt_date.now() }} as _write_date
+      - name: _write_date
         description: ""
         tests:
           - not_null
