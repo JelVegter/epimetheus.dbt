@@ -5,13 +5,15 @@
 WITH source_data AS (
 
     SELECT
-        * ,
-        daily_check,
+        daily_check, 
         CAST(_date AS DATE) as concerned_date,
-        COUNT(1) AS nr_of_violations,
+        COUNT(*) AS nr_of_violations
         
     FROM
         {{ ref('correctness_check') }}
+    GROUP BY
+        daily_check,
+        CAST(_date AS DATE)
 )
 
 SELECT
@@ -21,9 +23,6 @@ SELECT
     nr_of_violations,
     {{ dbt_date.now() }} as _write_ts,
     {{ dbt_date.today() }} as _write_date
-
 FROM
     source_data
-GROUP BY
-    daily_check,
-    concerned_date
+
