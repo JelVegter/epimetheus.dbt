@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: epi
+    database: epimetheusprd
+
+    tables:
+      - name: correctness_check
+      - name: sampled_record
+      - name: sent_xml

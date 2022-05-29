@@ -13,17 +13,13 @@ models:
         description: ""
         tests:
           - not_null
-      - name: caerus_id
+      - name: concerned_date
         description: ""
         tests:
-          - unique
           - not_null
-      - name: record_id
+      - name: nr_of_violations
         description: ""
-        tests:
-          - unique
-          - not_null
-      - name: _ts
+      - name: _write_ts
         description: ""
         tests:
           - not_null
@@ -31,14 +27,26 @@ models:
         description: ""
         tests:
           - not_null
-          
+
   - name: dim_check
     description: ""
     columns:
-      - name: check_id
+      - name: daily_check_id
         description: "The primary key for this table"
         tests:
           - unique
+          - not_null
+      - name: daily_check
+        description: ""
+        tests:
+          - not_null
+      - name: _write_ts
+        description: ""
+        tests:
+          - not_null
+      - name: _write_date
+        description: ""
+        tests:
           - not_null
 
   - name: fct_record
@@ -49,6 +57,34 @@ models:
         tests:
           - unique
           - not_null
+      - name: record
+        description: ""
+        tests:
+          - not_null
+      - name: table_name
+        description: ""
+        tests:
+          - not_null
+      - name: transaction_dt
+        description: ""
+        tests:
+          - not_null
+      - name: extraction_dt
+        description: ""
+        tests:
+          - not_null
+      - name: write_dt
+        description: ""
+        tests:
+          - not_null
+      - name: _write_ts
+        description: ""
+        tests:
+          - not_null
+      - name: _write_date
+        description: ""
+        tests:
+          - not_null
 
   - name: fct_xml
     description: ""
@@ -57,4 +93,28 @@ models:
         description: "The primary key for this table"
         tests:
           - unique
+          - not_null
+      - name: xml
+        description: ""
+        tests:
+          - not_null
+      - name: table_name
+        description: ""
+        tests:
+          - not_null
+      - name: nr_of_records
+        description: ""
+        tests:
+          - not_null
+      - name: extraction_dt
+        description: ""
+        tests:
+          - not_null
+      - name: _write_ts
+        description: ""
+        tests:
+          - not_null
+      - name: _write_date
+        description: ""
+        tests:
           - not_null
