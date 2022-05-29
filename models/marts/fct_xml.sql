@@ -5,10 +5,12 @@
 WITH source_data AS (
 
     SELECT
+        {% if target.name == 'dev' %}
+            TOP 1000
+        {% endif %}
         xml, table_name, nr_of_records, extraction_dt
     FROM
-        -- {{ ref('sent_xml') }}
-        {{ source('epi', 'sent_xml')}}
+        {{ source('epimetheus', 'sent_xml')}}
 )
 SELECT
     {{ dbt_utils.surrogate_key(['xml','table_name','cast(extraction_dt as date)']) }} AS xml_id,

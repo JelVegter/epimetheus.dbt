@@ -6,12 +6,18 @@
 WITH source_data AS (
 
     SELECT
+        {% if target.name == 'dev' %}
+            TOP 1000
+        {% endif %}
+
         record, table_name, transaction_dt, extraction_dt, write_dt
     FROM
-        -- {{ ref('sampled_record') }}
-        {{ source('epi', 'sampled_record')}}
+        {{ source('epimetheus', 'sampled_record')}}
     WHERE
         {{ dbt_utils.datediff("write_dt", "getdate()", 'day') }} < 15
+
+
+
 )
 SELECT
     {{ dbt_utils.surrogate_key(['record','table_name','write_dt']) }} AS record_id,

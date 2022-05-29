@@ -10,8 +10,7 @@ WITH source_data AS (
         COUNT(*) AS nr_of_violations
         
     FROM
-        -- {{ ref('correctness_check') }}
-        {{ source('epi', 'correctness_check')}}
+        {{ source('epimetheus', 'correctness_check')}}
     GROUP BY
         daily_check,
         CAST(_ts AS DATE)

@@ -1,5 +1,5 @@
 {{ config(
-    materialized = 'table'
+    materialized = 'table',
 ) }}
 --
 
@@ -8,8 +8,7 @@ WITH source_data AS (
     SELECT
         DISTINCT daily_check
     FROM
-        -- {{ ref('correctness_check') }}
-        {{ source('epi', 'correctness_check')}}
+        {{ source('epimetheus', 'correctness_check')}}
 )
 SELECT
     {{ dbt_utils.surrogate_key(['daily_check']) }} AS daily_check_id,
