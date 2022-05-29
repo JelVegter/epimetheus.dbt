@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-  - name: epi
+  - name: epimetheus
     database: epimetheusprd
-
+    schema: epi
     tables:
       - name: correctness_check
       - name: sampled_record
