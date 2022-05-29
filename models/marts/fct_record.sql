@@ -8,7 +8,8 @@ WITH source_data AS (
     SELECT
         record, table_name, transaction_dt, extraction_dt, write_dt
     FROM
-        {{ ref('sampled_record') }}
+        -- {{ ref('sampled_record') }}
+        {{ source('epi', 'sampled_record')}}
     WHERE
         {{ dbt_utils.datediff("write_dt", "getdate()", 'day') }} < 15
 )
