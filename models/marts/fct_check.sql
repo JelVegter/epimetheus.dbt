@@ -22,7 +22,7 @@ SELECT
     daily_check,
     concerned_date,
     nr_of_violations,
-    {{ dbt_date.now() }} as _ts,
+    {{ dbt_date.now() }} as _ts
 FROM
     source_data
 

@@ -14,6 +14,6 @@ WITH source_data AS (
 SELECT
     {{ dbt_utils.surrogate_key(['daily_check']) }} AS daily_check_id,
     daily_check,
-    {{ dbt_date.now() }} as _ts,
+    {{ dbt_date.now() }} as _ts
 FROM
     source_data
