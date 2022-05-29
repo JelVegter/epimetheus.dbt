@@ -14,7 +14,7 @@ WITH source_data AS (
         {{ source('epi', 'correctness_check')}}
     GROUP BY
         daily_check,
-        _date
+        CAST(_ts AS DATE)
 )
 
 SELECT
