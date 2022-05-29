@@ -6,7 +6,7 @@ WITH source_data AS (
 
     SELECT
         daily_check, 
-        CAST(_date AS DATE) as concerned_date,
+        CAST(_ts AS DATE) as concerned_date,
         COUNT(*) AS nr_of_violations
         
     FROM
