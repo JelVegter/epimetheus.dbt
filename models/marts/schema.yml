@@ -118,3 +118,60 @@ models:
         description: ""
         tests:
           - not_null
+
+  - name: fct_zip
+    description: ""
+    columns:
+      - name: zip_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: date
+        description: ""
+        tests:
+          - not_null
+      - name: number_of_records
+        description: ""
+        tests:
+          - not_null
+      - name: datasafe_id
+        description: ""
+        tests:
+          - not_null
+      - name: earliest_timestamp
+        description: ""
+        tests:
+          - not_null
+      - name: latest_timestamp
+        description: ""
+        tests:
+          - not_null
+      - name: generation_date
+        description: ""
+        tests:
+          - not_null
+      - name: file_size_uncompressed
+        description: ""
+        tests:
+          - not_null
+      - name: file_size_compressed
+        description: ""
+        tests:
+          - not_null
+      - name: blob_name
+        description: ""
+        tests:
+          - not_null
+      - name: filename
+        description: ""
+        tests:
+          - not_null
+      - name: creation_time_adls
+        description: ""
+        tests:
+          - not_null
+      - name: _ts
+        description: ""
+        tests:
+          - not_null

@@ -8,3 +8,4 @@ sources:
       - name: correctness_check
       - name: sampled_record
       - name: sent_xml
+      - name: sent_zip
