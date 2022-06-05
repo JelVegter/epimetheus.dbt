@@ -10,7 +10,11 @@ WITH source_data AS (
             TOP 1000
         {% endif %}
 
-        record, table_name, transaction_dt, extraction_dt, write_dt
+        record, 
+        table_name, 
+        transaction_dt, 
+        extraction_dt, 
+        write_dt
     FROM
         {{ source('epimetheus', 'sampled_record')}}
     WHERE
@@ -21,7 +25,11 @@ WITH source_data AS (
 )
 SELECT
     {{ dbt_utils.surrogate_key(['record','table_name','write_dt']) }} AS record_id,
-    record, table_name, transaction_dt, extraction_dt, write_dt,
+    record, 
+    table_name, 
+    transaction_dt, 
+    extraction_dt, 
+    write_dt,
     {{ dbt_date.now() }} as _ts
 FROM
     source_data
