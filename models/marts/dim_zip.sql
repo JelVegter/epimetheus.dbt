@@ -8,6 +8,7 @@ WITH source_data AS (
         {% if target.name == 'dev' %}
             TOP 1000
         {% endif %}
+        generation_date,
         datasafe_id,
         blob_name,
         filename
