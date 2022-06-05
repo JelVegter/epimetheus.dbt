@@ -121,6 +121,9 @@ models:
 
   - name: fct_zip
     description: ""
+    tests:
+      - dbt_utils.equal_rowcount:
+          compare_model: ref('dim_zip')
     columns:
       - name: zip_id
         description: "The primary key for this table"
