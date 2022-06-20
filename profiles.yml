@@ -8,7 +8,11 @@ epimetheus_mssql:
       database: epimetheusprd
       port: 1433
       schema: DBT_JVEGTER
-      authentication: CLI
+      authentication: ServicePrincipal
+      tenant_id: b5c47f42-c22c-453e-9984-c09cc131b040
+      client_id: "{{ env_var('CLIENT_ID') }}"
+      client_secret: "{{ env_var('CLIENT_SECRET') }}"
+
     prd:
       type: sqlserver
       driver: "ODBC Driver 18 for SQL Server"
@@ -16,4 +20,7 @@ epimetheus_mssql:
       database: epimetheusprd
       port: 1433
       schema: epi
-      authentication: CLI
+      authentication: ServicePrincipal
+      tenant_id: b5c47f42-c22c-453e-9984-c09cc131b040
+      client_id: "{{ env_var('CLIENT_ID') }}"
+      client_secret: "{{ env_var('CLIENT_SECRET') }}"
