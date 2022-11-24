@@ -18,7 +18,7 @@ WITH source_data AS (
     FROM
         {{ source('epimetheus', 'sampled_record')}}
     WHERE
-        {{ dbt_utils.datediff("write_dt", "getdate()", 'day') }} < 15
+        {{ dbt_utils.datediff("write_dt", "getdate()", 'month') }} < 3
 
 
 
