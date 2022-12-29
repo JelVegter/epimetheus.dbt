@@ -10,8 +10,8 @@ epimetheus_mssql:
       schema: DBT_JVEGTER
       authentication: ServicePrincipal
       tenant_id: b5c47f42-c22c-453e-9984-c09cc131b040
-      client_id: "{{ env_var('CLIENT_ID') }}"
-      client_secret: "{{ env_var('CLIENT_SECRET') }}"
+      client_id: "{{ env_var('AZURE_CLIENT_ID') }}"
+      client_secret: "{{ env_var('AZURE_CLIENT_SECRET') }}"
 
     prd:
       type: sqlserver
@@ -22,5 +22,5 @@ epimetheus_mssql:
       schema: epi
       authentication: ServicePrincipal
       tenant_id: b5c47f42-c22c-453e-9984-c09cc131b040
-      client_id: "{{ env_var('CLIENT_ID') }}"
-      client_secret: "{{ env_var('CLIENT_SECRET') }}"
+      client_id: "{{ env_var('AZURE_CLIENT_ID') }}"
+      client_secret: "{{ env_var('AZURE_CLIENT_SECRET') }}"
