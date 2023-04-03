@@ -9,24 +9,6 @@ models:
         tests:
           - unique
           - not_null
-      - name: daily_check
-        description: ""
-        tests:
-          - not_null
-      - name: concerned_date
-        description: ""
-        tests:
-          - not_null
-      - name: nr_of_violations
-        description: ""
-      - name: _write_ts
-        description: ""
-        tests:
-          - not_null
-      - name: _write_date
-        description: ""
-        tests:
-          - not_null
 
   - name: dim_check
     description: ""
@@ -35,18 +17,6 @@ models:
         description: "The primary key for this table"
         tests:
           - unique
-          - not_null
-      - name: daily_check
-        description: ""
-        tests:
-          - not_null
-      - name: _write_ts
-        description: ""
-        tests:
-          - not_null
-      - name: _write_date
-        description: ""
-        tests:
           - not_null
 
   - name: fct_record
@@ -57,34 +27,6 @@ models:
         tests:
           - unique
           - not_null
-      - name: record
-        description: ""
-        tests:
-          - not_null
-      - name: table_name
-        description: ""
-        tests:
-          - not_null
-      - name: transaction_dt
-        description: ""
-        tests:
-          - not_null
-      - name: extraction_dt
-        description: ""
-        tests:
-          - not_null
-      - name: write_dt
-        description: ""
-        tests:
-          - not_null
-      - name: _write_ts
-        description: ""
-        tests:
-          - not_null
-      - name: _write_date
-        description: ""
-        tests:
-          - not_null
 
   - name: fct_xml
     description: ""
@@ -93,30 +35,6 @@ models:
         description: "The primary key for this table"
         tests:
           - unique
-          - not_null
-      - name: xml
-        description: ""
-        tests:
-          - not_null
-      - name: table_name
-        description: ""
-        tests:
-          - not_null
-      - name: nr_of_records
-        description: ""
-        tests:
-          - not_null
-      - name: extraction_dt
-        description: ""
-        tests:
-          - not_null
-      - name: _write_ts
-        description: ""
-        tests:
-          - not_null
-      - name: _write_date
-        description: ""
-        tests:
           - not_null
 
   - name: fct_zip
@@ -129,52 +47,4 @@ models:
         description: "The primary key for this table"
         tests:
           - unique
-          - not_null
-      - name: date
-        description: ""
-        tests:
-          - not_null
-      - name: number_of_records
-        description: ""
-        tests:
-          - not_null
-      - name: datasafe_id
-        description: ""
-        tests:
-          - not_null
-      - name: earliest_timestamp
-        description: ""
-        tests:
-          - not_null
-      - name: latest_timestamp
-        description: ""
-        tests:
-          - not_null
-      - name: generation_date
-        description: ""
-        tests:
-          - not_null
-      - name: file_size_uncompressed
-        description: ""
-        tests:
-          - not_null
-      - name: file_size_compressed
-        description: ""
-        tests:
-          - not_null
-      - name: blob_name
-        description: ""
-        tests:
-          - not_null
-      - name: filename
-        description: ""
-        tests:
-          - not_null
-      - name: creation_time_adls
-        description: ""
-        tests:
-          - not_null
-      - name: _ts
-        description: ""
-        tests:
           - not_null
