@@ -9,6 +9,6 @@ epimetheus_mssql:
       port: 1433
       schema: epi
       authentication: ServicePrincipal
-      tenant_id: "b5c47f42-c22c-453e-9984-c09cc131b040"
+      tenant_id: b5c47f42-c22c-453e-9984-c09cc131b040
       client_id: "{{ env_var('AZURE_CLIENT_ID') }}"
       client_secret: "{{ env_var('AZURE_CLIENT_SECRET') }}"
